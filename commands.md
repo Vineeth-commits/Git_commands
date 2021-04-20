@@ -175,6 +175,7 @@ git clone <url>
 ```
 	
 ## Git - Perform Changes 
+---
 * git status command will show files present in the staging area. If it is precided by a question mark then these files are not a part of Git. The performed changes can be committed.
     ```bash
     git status -s
@@ -189,6 +190,7 @@ git clone <url>
     ```
 
 ## Git - Review Changes
+---
 * Use the git show command to view the commit details. The git show command takes SHA-1 commit ID as a parameter.
     ```bash
 	git show <commit ID>
@@ -199,6 +201,7 @@ git clone <url>
     ```
 
 ## Git - Push Operation
+---
 * The Push operation stores data permanently to the Git repository.
     ```bash
 	git push origin master
@@ -210,6 +213,7 @@ git clone <url>
     Checking log files is essential
 	
 ## Git - Stash Operation
+---
 When a situation arises where a new feature must be applied but it cant be be temporarily committed. Stash can be used when you need a temporary space and a partial space.
 Now, you want to switch branches for customer escalation, but you don’t want to commit what you’ve been working on yet; so you’ll stash the changes. 
 * To push a new stash onto your stack, run the git stash command.
@@ -226,21 +230,23 @@ Now, you want to switch branches for customer escalation, but you don’t want t
     ```
 
 ## Git - Move Operation
+---
 * The move operation moves a directory or a file from one location to another. Tom decides to move the source code into src directory.
     ```bash
-	>git mv <file to be moved> <location to be moved>
+	git mv <file to be moved> <location to be moved>
     ```
 * To make these changes permanent, we have to push the modified directory structure to the remote repository so that other developers can see this.
     ```bash
-	>git commit -m "Location changed"
-	>git push origin master
+	git commit -m "Location changed"
+	git push origin master
     ```
 * After the pull operation, the directory structure will get updated for other members of the repository
     ```bash
-	>git pull
+	git pull
     ```
 
 ## Git - Rename Operation
+---
 * To rename a file, we use
     ```bash
 	git mv <file name> <new name>
@@ -253,14 +259,16 @@ Now, you want to switch branches for customer escalation, but you don’t want t
         ```
 
 ## Git - Delete Operation
+---
 The procedure is same as moving and renaming. We use 
 ```bash
->git rm <file name>
+git rm <file name>
 ```
 commit and push it later
 
 
 ## Git - Time travel through reset and reflog
+---
 Suppose the user accidentally does some changes and wants to go back.
 * The option --soft is the least destructive. This simply changes the commit ID that the head is pointing to which means it preserves the git staging area
     ```bash
@@ -274,10 +282,11 @@ Suppose the user accidentally does some changes and wants to go back.
     This is the most destructive. This simply cleans the working directory and staging area
 * Shows all the different actions taken in the repository
     ```bash
-	>git reflog
+	git reflog
     ```
 
 ## Git - Tag Operation
+---
 * Creates a simple tag
     ```bash
 	git tag <name of the tag> 
@@ -288,10 +297,11 @@ Suppose the user accidentally does some changes and wants to go back.
     ```
 * Creates a annotation tag which provides more info when git show <tag name> is done
     ```bash
-	>git tag -a <name of the tag> -m "message"
+	git tag -a <name of the tag> -m "message"
     ```
 
 ## Git - Backing out changes
+---
 * A file can be removed from the staging by using reset command
     ```bash
 	git reset HEAD <file to be unstaged>
@@ -302,23 +312,26 @@ Suppose the user accidentally does some changes and wants to go back.
     ```
 	
 ## Creating aliases for git commands
+---
 ```bash
 git config --global alias.[name of the alias] "<the command>"
 ```
 
 ## Types of merges
+---
 * Fast-Forword merge - used when no additional work has been detected on the parent branch (when merged its like the branch has never been created)
 	* Automatic merge
 	* Manual merge
 
 ## Creating a branch, merging it and then deleting the branch
+---
 * Creates a branch
     ```bash
 	git branch <branch_name> 
     ```
 * Moving the HEAD to the a particular branch
     ```bash
-	>git checkout <branch_name> 
+	git checkout <branch_name> 
     ```
 * This command is same as the above two commands. It creates and moves the HEAD to a branch. The option -b creates the branch
     ```bash
@@ -344,6 +357,7 @@ git config --global alias.[name of the alias] "<the command>"
         ```
 
 ## Linking to your remote repository and pushing changes
+---
 * Displays remote connections
     ```bash
 	git remote -v 
@@ -358,6 +372,7 @@ git config --global alias.[name of the alias] "<the command>"
     ```
 
 ## SSH authentication
+---
 * create a .ssh directory in ~/
     ```bash
 	mkdir .ssh
@@ -373,16 +388,19 @@ git config --global alias.[name of the alias] "<the command>"
     to check if the machine is communicating to github via SSH
 
 ## Updating the remote url
+---
 If the git repo name is changed then use this to update 
 ```bash
 git remote set-url origin <url>
 ```
 
 ## Difference between fetch and pull
+---
 * git fetch really only downloads new data from a remote repository - but it doesn't integrate any of this new data into your working files. Fetch is great for getting a fresh view on all the things that happened in a remote repository.
 * git pull, in contrast, is used with a different goal in mind: to update your current HEAD branch with the latest changes from the remote server. This means that pull not only downloads new data; it also directly integrates it into your current working copy files.
 	Note: Start git pull with a clean directory only
 
 ## Git rebase
+---
 * Rebasing essentially takes a set of commits, "copies" them, and plops them down somewhere else.
 * While this sounds confusing, the advantage of rebasing is that it can be used to make a nice linear sequence of commits. The commit log / history of the repository will be a lot cleaner if only rebasing is allowed.
